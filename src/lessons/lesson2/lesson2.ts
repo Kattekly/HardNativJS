@@ -138,19 +138,36 @@ let list = {
 function printList(list: any) {
    let a = list
     while (a) {
+        alert(a.value)
        a = a.next
     }
 }
 
-console.log(printList(list))
+printList(list)
 // for (let i=1; i<list.length; i++) {
 //     return list[i]
 // }
+
 function printList2(list: any): any {
+    alert(list.value)
     if (list.next)
    return printList2(list.next)
 }
-console.log(printList2(list))
+printList2(list)
+
+
+//Задача 5
+function printList3(list: any) {
+    let a = list
+    let b = []
+    while (a) {
+        b.push(a.value)
+        a = a.next
+    }
+    for (let i = b.length-1; i>=0; i--)
+        alert(b[i])
+}
+printList3(list)
 // Task 06
 // написать функцию, которая повторяет функционал метода flat массива на всю глубину.
 
