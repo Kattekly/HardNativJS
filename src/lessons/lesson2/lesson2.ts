@@ -183,5 +183,17 @@ printList4(list)
 // Task 06
 // написать функцию, которая повторяет функционал метода flat массива на всю глубину.
 
+function flatAll(array: any): any {
+    return array.reduce((acc: any, current: any) => {
+        if(Array.isArray(current)) return acc.concat(flatAll(current))
+        return [...acc, current]
+    }, [])
+}
+let a = [1,2,3,[4,5,[6,7]]]
+console.log(flatAll(a))
+
+
+
+
 // just a plug
 export default () => {};
