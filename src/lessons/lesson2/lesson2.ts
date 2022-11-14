@@ -97,6 +97,16 @@ function factorial(n: number): number {
 console.log(factorial(5))
 
 
+//Задача 3
+function fib(n: number): number {
+    if (n <=1) {
+        return n
+    }
+    return fib(n-1) + fib(n-2)
+}
+
+console.log(fib(7))
+
 // Task 06
 // написать функцию, которая повторяет функционал метода flat массива на всю глубину.
 
