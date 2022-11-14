@@ -1,3 +1,5 @@
+import {reverse} from "dns";
+
 console.log('lesson 2');
 
 // Lexical environment
@@ -168,6 +170,16 @@ function printList3(list: any) {
         alert(b[i])
 }
 printList3(list)
+
+
+function printList4(list: any): any {
+    if (list.next)
+        printList4(list.next)
+    alert(list.value)
+}
+
+printList4(list)
+
 // Task 06
 // написать функцию, которая повторяет функционал метода flat массива на всю глубину.
 
