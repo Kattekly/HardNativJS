@@ -56,6 +56,7 @@ console.log('lesson 2');
 // Task 05
 // решить все задачи по рекурсии которые даны в конце статьи https://learn.javascript.ru/recursion
 
+//Задача 1
 function sumTo(n: number) {
 let sum = 0
     for(let i = 0; i<= n; i++) {
@@ -81,6 +82,20 @@ function sumTo3(n: number){
 }
 
 console.log(sumTo3(100))
+
+
+//Задача 2
+function factorial(n: number): number {
+    if (n == 1) {
+        return n
+    }
+    else {
+        return n * factorial(n-1)
+    }
+}
+
+console.log(factorial(5))
+
 
 // Task 06
 // написать функцию, которая повторяет функционал метода flat массива на всю глубину.
