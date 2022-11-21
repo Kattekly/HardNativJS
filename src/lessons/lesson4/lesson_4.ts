@@ -1,4 +1,5 @@
 import {logDOM} from "@testing-library/react";
+import {log} from "util";
 
 console.log('lesson 4');
 
@@ -10,16 +11,31 @@ console.log('lesson 4');
 // Создайте промис, который постоянно находиться в состоянии pending.
 // В конструкторе промиса выведите в консоль сообщение "Promise is created".
 
-const prom = () => {
-    return new Promise((resolve, reject) => {
-        console.log('Promise is created')
-    })
+const prom =  {
+    getFile() {
+        return new Promise((resolve, reject) => {
+            console.log('Promise is created')
+        })
+    }
 }
+const promise = prom.getFile()
+console.log(promise)
 
 // Task 02
 // Создайте промис, который после создания сразу же переходит в состояние resolve
 // и возвращает строку 'Promise Data'
 // Получите данные промиса и выведите их в консоль
+
+const prom2 = {
+    getFile() {
+        return new Promise((resolve, reject) => {
+            console.log('Promise is created')
+            resolve('Promise Data')
+        })
+    }
+}
+const promise2 = prom2.getFile()
+console.log(promise2)
 
 
 // Task 03
