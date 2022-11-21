@@ -107,16 +107,26 @@ const name = {
     getFile() {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
-                resolve('My name is')
+                resolve(`My name is + ${name}`)
             }, 1000)
         })
     }
 }
-const promise5 = name.getFile()
-console.log(promise5)
+name.getFile()
+    .then(() => {
+    onSuccess(name)
+})
+    .then(() => {
+        print()
+    })
 
-function onSuccess (name: string) {
+
+function onSuccess (name) {
     return name
+}
+
+function print (param) {
+    console.log(param)
 }
 
 // Task 7
@@ -131,8 +141,9 @@ const pr2 = new Promise((res => {setTimeout(() => {res({age: 16})}, 3000)}))
 const pr3 = new Promise((res => {setTimeout(() => {res({city: ''})}, 4000)}))
 
 
-const promise6 = Promise.all([pr1, pr2, pr3])
-console.log(promise6)
+Promise.all([pr1, pr2, pr3]).then(res => {
+    console.log(res)
+})
 
 
 // just a plug
