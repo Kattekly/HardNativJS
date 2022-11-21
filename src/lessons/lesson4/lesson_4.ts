@@ -1,3 +1,5 @@
+import {log} from "util";
+
 console.log('lesson 4');
 
 // http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D
@@ -83,6 +85,15 @@ console.log(promise4)
 // resolve и reject. Следующие два обработчика запускают методы resolve и reject.
 
 
+/*const handlePromise = {
+    promise: null,
+    resolve: null,
+    reject: null,
+    onSuccess: () => console.log(`Promise is resolved with data: ${paramName}`),
+    onError: () => console.log(`Promise is rejected with error: ${paramName}`)
+}*/
+
+
 // Task 06
 // Создайте промис, который через 1 с возвращает строку "My name is".
 // Создайте функцию onSuccess, которая получает один параметр,
@@ -91,11 +102,37 @@ console.log(promise4)
 // Добавьте два метода then и передайте созданные функции.
 
 
+
+const name = {
+    getFile() {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('My name is')
+            }, 1000)
+        })
+    }
+}
+const promise5 = name.getFile()
+console.log(promise5)
+
+function onSuccess (name: string) {
+    return name
+}
+
 // Task 7
 // Создайте три промиса. Первый промис возвращает объект { name: "Anna" } через 2с,
 // второй промис возвращает объект {age: 16} через 3 с, а третий {city: ''} через 4с.
 // Получите результаты работы промисов, объедините свойства объектов
 // и выведите в консоль {name, age, city}
+
+
+const pr1 = new Promise((res => {setTimeout(() => {res({ name: "Anna" })}, 2000)}))
+const pr2 = new Promise((res => {setTimeout(() => {res({age: 16})}, 3000)}))
+const pr3 = new Promise((res => {setTimeout(() => {res({city: ''})}, 4000)}))
+
+
+const promise6 = Promise.all([pr1, pr2, pr3])
+console.log(promise6)
 
 
 // just a plug
