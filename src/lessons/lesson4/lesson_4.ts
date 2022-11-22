@@ -141,11 +141,13 @@ const pr2 = new Promise((res => {setTimeout(() => {res({age: 16})}, 3000)}))
 const pr3 = new Promise((res => {setTimeout(() => {res({city: ''})}, 4000)}))
 
 
-Promise.all([pr1, pr2, pr3]).then(res => {
-    console.log(res)
-})
+const allPromise = Promise.all([pr1, pr2, pr3])
 
-
+allPromise.then((results) => {
+const dataPr1 = results[0]
+const dataPr2 = results[1]
+const dataPr3 = results[2]
+    })
 // just a plug
 export default () => {
 };
