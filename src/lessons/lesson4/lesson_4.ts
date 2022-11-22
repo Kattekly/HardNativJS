@@ -109,7 +109,8 @@ const name = {
             setTimeout(() => {
                 resolve(`My name is + ${name}`)
             }, 1000)
-        })
+        }).then(name)
+        onSuccess(name)
     }
 }
 name.getFile()
