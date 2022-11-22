@@ -138,7 +138,7 @@ function print (param) {
 
 const pr1 = new Promise((res => {setTimeout(() => {res({ name: "Anna" })}, 2000)}))
 const pr2 = new Promise((res => {setTimeout(() => {res({age: 16})}, 3000)}))
-const pr3 = new Promise((res => {setTimeout(() => {res({city: ''})}, 4000)}))
+const pr3 = new Promise((res => {setTimeout(() => {res({city: 'Minsk'})}, 4000)}))
 
 
 const allPromise = Promise.all([pr1, pr2, pr3])
@@ -147,6 +147,7 @@ allPromise.then((results) => {
 const dataPr1 = results[0]
 const dataPr2 = results[1]
 const dataPr3 = results[2]
+    console.log(dataPr1.name + ", " + dataPr2.age + ", " + dataPr3.city)
     })
 // just a plug
 export default () => {
