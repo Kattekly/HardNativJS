@@ -28,7 +28,13 @@ return new Promise((res) => {
 })
 }
 
-delay(1000).then(() => alert("Hello!"))
+delay(1000)
+    .then(() => alert("Hello!"))
+
+
+
+
+
 
 console.log('lesson 4');
 
