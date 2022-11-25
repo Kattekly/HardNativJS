@@ -23,8 +23,12 @@ run()
 
 
 function delay(ms) {
-
+return new Promise((res) => {
+    setTimeout(res, ms)
+})
 }
+
+delay(1000).then(() => alert("Hello!"))
 
 console.log('lesson 4');
 
