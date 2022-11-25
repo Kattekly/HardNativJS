@@ -1,4 +1,30 @@
 import {log} from "util";
+import {Simulate} from "react-dom/test-utils";
+import error = Simulate.error;
+
+function wait(ms) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve()
+        }, ms)
+    })
+}
+
+async function run() {
+    await wait(1000)
+    console.log(1)
+    await wait(1000)
+    console.log(2)
+    await wait(1000)
+    console.log(3)
+}
+
+run()
+
+
+function delay(ms) {
+
+}
 
 console.log('lesson 4');
 
@@ -36,6 +62,11 @@ const prom2 = {
 const promise2 = prom2.getFile()
 console.log(promise2)
 
+//2
+function getResolvePromise () {
+    return Promise.resolve('Promise is created')
+}
+getResolvePromise().then(n => console.log(n))
 
 // Task 03
 // Создайте промис, который после создания сразу же переходит в состояние rejected
@@ -51,6 +82,12 @@ const prom3 = {
 }
 const promise3 = prom3.getFile()
 console.log(promise3)
+
+//2
+function getRejectPromise () {
+    return Promise.reject()
+}
+getRejectPromise().catch(error => console.warn('Promise Error' + error))
 
 
 // Task 04
