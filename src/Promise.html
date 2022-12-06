@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Promise</title>
 </head>
 <body>
 
@@ -21,7 +21,12 @@
         }
     }
 
-    axios.get().then(data => console.log(data))
+    axios.get()
+        .then(data => console.log(data))
+        .then(() => {console.log(1)})
+        .then(() => {console.log(2)})
+        .catch(data => console.error(data))
+        .finally(() => {console.log("Thank")})
 
 
 </script>
