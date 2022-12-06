@@ -29,6 +29,18 @@
         .finally(() => {console.log("Thank")})
 
 
+
+    let a = {
+        sum(a, b) {
+            console.log(a+b);
+            return this
+        }
+    }
+
+    a.sum(2, 3)
+    a.sum(7, 3)
+    a.sum(2, 4)
+
 </script>
 
 
