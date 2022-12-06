@@ -8,15 +8,23 @@
 
 
 <script>
-    let pr = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve()
-        }, 5000)
-    })
+
+
+    let axios = {
+        get() {
+            let pr = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve()
+                }, 5000)
+            })
+            return pr
+        }
+    }
+
+    axios.get().then(data => console.log(data))
 
 
 </script>
-
 
 
 </body>
