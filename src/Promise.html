@@ -14,7 +14,7 @@
         get() {
             let pr = new Promise((resolve, reject) => {
                 setTimeout(() => {
-                    resolve("Hello")
+                    resolve({f: 1, sd: 45, message: 'Hello'})
                 }, 3000)
             })
             return pr
@@ -22,24 +22,25 @@
     }
 
     axios.get()
-        .then(data => console.log(data))
-        .then(() => {console.log(1)})
-        .then(() => {console.log(2)})
+        .then(data => console.log(data.message))
+        .then((message) => console.log(message))
+        .then((message2) => console.log(message2))
+       /* .then(() => {console.log(2)})
         .catch(data => console.error(data))
-        .finally(() => {console.log("Thank")})
+        .finally(() => {console.log("Thank")})*/
 
 
-
-    let a = {
-        sum(a, b) {
-            console.log(a+b);
-            return this
-        }
-    }
-
-    a.sum(2, 3)
-    a.sum(7, 3)
-    a.sum(2, 4)
+//ченинг
+//     let a = {
+//         sum(a, b) {
+//             console.log(a+b);
+//             return this
+//         }
+//     }
+//
+//     a.sum(2, 3)
+//     a.sum(7, 3)
+//     a.sum(2, 4)
 
 </script>
 
