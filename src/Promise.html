@@ -46,17 +46,34 @@
 
 
     // внутрь Promise передаем колбэк-функцию, которая собственно и есть та логика, которую промис обещает выполнить.
-    let myPromise = new Promise((resolve, reject) => {
-        resolve(Math.random())
-
-    });
-    console.log(myPromise)
+    // let myPromise = new Promise((resolve, reject) => {
+    //     resolve(Math.random())
+    //
+    // });
 
     // ниже по коду мы можем подписаться, на промис, чтобы он (промис) вызвал нашу функцию, когда он (промис) зарезолвится. Для этого передаём в метод then колбэк-функцию)
-    myPromise.then((number) => {
-        console.log(number);
-    })
 
+    const doAfter = (sec) => {
+        let myPromise = new Promise((resolve, reject) => {
+            setTimeout (() => {
+                resolve()
+            }, sec*1000)
+        });
+        return myPromise
+    }
+
+    doAfter(5).then(() => console.log('я сработал через 5 секунд'));
+    doAfter(3).then(() => console.log('а я сработал через 3 секунд'));
+    doAfter(10).then(() => console.log('я сработал через 10 секунд'));
+
+    // myPromise.then((number) => {
+    //     console.log(number);
+    //     console.log(myPromise);
+    // })
+    // myPromise.then((number) => {
+    //     console.log("myr: " + number);
+    //     console.log(myPromise);
+    // })
 
 </script>
 
