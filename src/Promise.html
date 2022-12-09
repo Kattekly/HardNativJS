@@ -53,7 +53,13 @@
 
     // ниже по коду мы можем подписаться, на промис, чтобы он (промис) вызвал нашу функцию, когда он (промис) зарезолвится. Для этого передаём в метод then колбэк-функцию)
 
-    const doAfter = (sec) => {
+    let promis = new Promise((res, rej) => {
+        alert("Mrrrrrrrrr")
+        res()
+    })
+    promis.then()
+
+    /*const doAfter = (sec) => {
         let myPromise = new Promise((resolve, reject) => {
             setTimeout (() => {
                 resolve()
@@ -65,7 +71,7 @@
     doAfter(5).then(() => console.log('я сработал через 5 секунд'));
     doAfter(3).then(() => console.log('а я сработал через 3 секунд'));
     doAfter(10).then(() => console.log('я сработал через 10 секунд'));
-
+*/
     // myPromise.then((number) => {
     //     console.log(number);
     //     console.log(myPromise);
