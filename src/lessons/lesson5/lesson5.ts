@@ -71,20 +71,25 @@ let counter = {
 
 let counter = {
     startValue: 0,
-    getCurrentCount() {
-        return counter
+    getCurrentCount: function () {
+        this.startValue
+        return this
     },
-    increment(startValue) {
-        return this.startValue + 1
+    increment() {
+        this.startValue + 1
+        return this
     },
-    decrement(startValue) {
-        return this.startValue - 1
+    decrement() {
+        this.startValue - 1
+        return this
     },
     setCurrentCount(number) {
         this.startValue = number
+        return this
     },
-    restCurrentCount(startValue) {
+    restCurrentCount() {
         this.startValue = 0
+        return this
     }
 }
 
