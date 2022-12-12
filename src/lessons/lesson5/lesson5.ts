@@ -1,3 +1,5 @@
+import {log} from "util";
+
 console.log('Lesson 5');
 
 // Keyword - this
@@ -35,11 +37,15 @@ let someObj = {
     age: 32
 }
 
-let greeting = function greeting() {
-    return `My name is ${name}. I am ${age}`
+const Greeting = {
+    greeting() {
+        return console.log(`My name is ${this.name}. I am ${this.age}`)
+}
 }
 
-someObj.__proto__= greeting
+someObj.__proto__= Greeting
+someObj.greeting()
+
 
 // Task 02
 // реализовать счетчик counter в виде объекта со следующими методами:
