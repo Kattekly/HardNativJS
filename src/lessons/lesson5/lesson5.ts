@@ -76,11 +76,11 @@ let counter = {
         return this
     },
     increment() {
-        this.startValue + 1
+        this.startValue ++
         return this
     },
     decrement() {
-        this.startValue - 1
+        this.startValue --
         return this
     },
     setCurrentCount(number) {
