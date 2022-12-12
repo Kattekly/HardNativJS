@@ -46,11 +46,21 @@ let someObj: someObjType = {
 
 let counter = {
     startValue: 0,
-    getCurrentCount() {},
-    increment() {},
-    decrement() {},
-    setCurrentCount() {},
-    restCurrentCount() {}
+    getCurrentCount() {
+        return counter
+    },
+    increment() {
+        return this.startValue + 1
+    },
+    decrement() {
+        return this.startValue - 1
+    },
+    setCurrentCount(number) {
+        this.startValue = number
+    },
+    restCurrentCount() {
+        this.startValue = 0
+    }
 }
 
 
