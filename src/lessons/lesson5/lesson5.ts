@@ -35,6 +35,10 @@ let someObj: someObjType = {
     age: 32
 }
 
+function greeting () {
+
+}
+
 // Task 02
 // реализовать счетчик counter в виде объекта со следующими методами:
 // get current count; - выводит текущее значение счетчика
