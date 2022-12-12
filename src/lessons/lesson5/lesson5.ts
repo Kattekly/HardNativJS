@@ -30,14 +30,16 @@ type someObjType = {
     age: number;
 }
 
-let someObj: someObjType = {
+let someObj = {
     name: 'Eugene',
     age: 32
 }
 
-function greeting () {
-
+let greeting = function greeting() {
+    return `My name is ${name}. I am ${age}`
 }
+
+someObj.__proto__= greeting
 
 // Task 02
 // реализовать счетчик counter в виде объекта со следующими методами:
@@ -68,7 +70,6 @@ let counter = {
 }
 
 
-
 // Task 03
 // переделайте код из Task 02, что бы сработал следующий код:
 // counter.setCurrentCount(10).increment().increment().increment().decrement().getCurrentCount() // 12
@@ -80,11 +81,11 @@ let counter = {
         return this
     },
     increment() {
-        this.startValue ++
+        this.startValue++
         return this
     },
     decrement() {
-        this.startValue --
+        this.startValue--
         return this
     },
     setCurrentCount(number) {
