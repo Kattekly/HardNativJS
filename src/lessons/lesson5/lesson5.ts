@@ -49,20 +49,22 @@ let counter = {
     getCurrentCount() {
         return counter
     },
-    increment() {
+    increment(startValue) {
         return this.startValue + 1
     },
-    decrement() {
+    decrement(startValue) {
         return this.startValue - 1
     },
     setCurrentCount(number) {
         this.startValue = number
     },
-    restCurrentCount() {
+    restCurrentCount(startValue) {
         this.startValue = 0
     }
 }
 
+counter.increment(2)
+console.log(counter)
 
 // Task 03
 // переделайте код из Task 02, что бы сработал следующий код:
