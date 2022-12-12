@@ -63,12 +63,31 @@ let counter = {
     }
 }
 
-counter.increment(2)
-console.log(counter)
+
 
 // Task 03
 // переделайте код из Task 02, что бы сработал следующий код:
 // counter.setCurrentCount(10).increment().increment().increment().decrement().getCurrentCount() // 12
+
+let counter = {
+    startValue: 0,
+    getCurrentCount() {
+        return counter
+    },
+    increment(startValue) {
+        return this.startValue + 1
+    },
+    decrement(startValue) {
+        return this.startValue - 1
+    },
+    setCurrentCount(number) {
+        this.startValue = number
+    },
+    restCurrentCount(startValue) {
+        this.startValue = 0
+    }
+}
+
 
 // Task 04
 // Написать функцию конструктор myFirstConstructorFunc которая принимает 2 параметра name и age и возвращает объект
