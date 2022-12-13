@@ -48,10 +48,10 @@
             {count: studentsCount}
         },
         getVacanciesCountFromGoogle() {
-
+            return axios.get('').then((res) => {res.data.vacancies})
         },
         getVacanciesCountFromMicrosoft() {
-
+            return axios.get('').then((res) => {res.data.vacancies})
         }
     }
 
