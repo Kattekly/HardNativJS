@@ -12,14 +12,14 @@
     const doAfter = (sec) => {
         let myPromise = new Promise((resolve, reject) => {
             setTimeout (() => {
-                resolve()
+                reject()
             }, sec*1000)
         });
         return myPromise
     }
 
     let promise3 = doAfter(3);
-    promise3.then( () => console.log('я сработал через 3 секунд') );
+    promise3.catch( () => console.log('я сработал через 3 секунд') );
     promise3.then( () => console.log('и я тоже следом сработал через 3 секунд') );
     promise3.then( () => console.log('и я') );
 
