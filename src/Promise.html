@@ -16,20 +16,28 @@
 
 
     //19
-   api.getVacanciesCountFromMicrosoft()
+    let pr1 = api.getVacanciesCountFromMicrosoft()
         .then(res => {
             console.log(res.data);
         });
 
-  api.getVacanciesCountFromGoogle()
+    let pr2 = api.getVacanciesCountFromGoogle()
         .then(res => {
             console.log(res.data);
         });
 
-   api.sendStudentsCountToItKamasutra()
-        .then(res => {
-            console.log(res.data);
-        });
+    let res = Promise.all([pr1, pr2])
+
+    res.then((res) => {
+        let p1 = res[0].data.vacansies;
+        let p2 = res[1].data.vacansies;
+
+        api.sendStudentsCountToItKamasutra(p1+p2)
+            .then(res => {
+                console.log(res.data);
+            });
+    })
+
 
     /* let axios = {
     get() {
