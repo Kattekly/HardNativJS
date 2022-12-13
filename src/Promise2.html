@@ -11,17 +11,23 @@
 
     const doAfter = (sec) => {
         let myPromise = new Promise((resolve, reject) => {
-            setTimeout (() => {
-                reject()
-            }, sec*1000)
+            setTimeout(() => {
+                const randValue = Math.random()
+                if (randValue > 0.5) {
+                    resolve(randValue)
+                } else {
+                    reject(randValue)
+                }
+
+            }, sec * 1000)
         });
         return myPromise
     }
 
     let promise3 = doAfter(3);
-    promise3.catch( () => console.log('я сработал через 3 секунд') );
-    promise3.then( () => console.log('и я тоже следом сработал через 3 секунд') );
-    promise3.then( () => console.log('и я') );
+    promise3.then(() => console.log('я сработал через 3 секунд'));
+    promise3.then(() => console.log('и я тоже следом сработал через 3 секунд'));
+    promise3.then(() => console.log('и я'));
 
 </script>
 
