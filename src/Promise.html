@@ -68,6 +68,14 @@
         }
     }
 
+
+    async function Vacansies2() {
+        let msCount = api.getVacanciesCountFromMicrosoft() //можно сразу запихнуть в массив
+        let gCount = api.getVacanciesCountFromGoogle() //можно сразу запихнуть в массив
+        let result = await Promise.all([msCount, gCount])
+        let allCount = await api.sendStudentsCountToItKamasutra(result[0] + result[1])
+    }
+
     //////////////////////////////////
 
     const api = {
