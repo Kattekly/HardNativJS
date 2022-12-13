@@ -53,29 +53,42 @@
             return sendStudentsCountToItKamasutra(gCount + msVacansies)
         })
         .then(res => {
-            console.log(res.data)})
+            console.log(res.data)
+        })
 
+    ///////////////////////////////////
 
-            //////////////////////////////////
+    async function Vacansies() {
+        await api.getVacanciesCountFromMicrosoft().then(res => {
+            console.log(res.data.vacansies);
+        });
+        await api.getVacanciesCountFromGoogle().then(res => {
+            console.log(res.data.vacansies);
+        });
+        await api.sendStudentsCountToItKamasutra().then(res => {
+            console.log(res.data);
+        })
 
-            const api = {
-                sendStudentsCountToItKamasutra(students) {
-                    return axios.post('')
-                    {
-                        count: studentsCount
-                    }
-                },
-                getVacanciesCountFromGoogle() {
-                    return axios.get('').then((res) => {
-                        res.data.vacancies
-                    })
-                },
-                getVacanciesCountFromMicrosoft() {
-                    return axios.get('').then((res) => {
-                        res.data.vacancies
-                    })
+        //////////////////////////////////
+
+        const api = {
+            sendStudentsCountToItKamasutra(students) {
+                return axios.post('')
+                {
+                    count: studentsCount
                 }
+            },
+            getVacanciesCountFromGoogle() {
+                return axios.get('').then((res) => {
+                    res.data.vacancies
+                })
+            },
+            getVacanciesCountFromMicrosoft() {
+                return axios.get('').then((res) => {
+                    res.data.vacancies
+                })
             }
+        }
 
 
     /* let axios = {
