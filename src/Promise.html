@@ -7,87 +7,101 @@
 <body>
 
 
-
-
 <script>
-
+    //16
     api.sendStudentsCountToItKamasutra(20)
         .then(data => {
             console.log(data);
         });
 
 
-/* let axios = {
-get() {
-let pr = new Promise((resolve, reject) => {
-setTimeout(() => {
-resolve({f: 1, sd: 45, message: 'Hello'})
-}, 3000)
-})
-return pr
-}
-}
+    //19
+   p1 = api.getVacanciesCountFromMicrosoft()
+        .then(data => {
+            console.log(data);
+        });
 
-axios.get()
-.then(data => console.log(data.message))
-.then((message) => console.log(message))
-.then((message2) => console.log(message2))
+  p2 =  p1.api.getVacanciesCountFromGoogle()
+        .then(data => {
+            console.log(data);
+        });
 
+   p3 = p2.api.sendStudentsCountToItKamasutra(p1, p2)
+        .then(data => {
+            console.log(data);
+        });
 
-.then(() => {console.log(2)})
-.catch(data => console.error(data))
-.finally(() => {console.log("Thank")})*/
+    /* let axios = {
+    get() {
+    let pr = new Promise((resolve, reject) => {
+    setTimeout(() => {
+    resolve({f: 1, sd: 45, message: 'Hello'})
+    }, 3000)
+    })
+    return pr
+    }
+    }
 
-
-//ченинг
-// let a = {
-// sum(a, b) {
-// console.log(a+b);
-// return this
-// }
-// }
-//
-// a.sum(2, 3)
-// a.sum(7, 3)
-// a.sum(2, 4)
+    axios.get()
+    .then(data => console.log(data.message))
+    .then((message) => console.log(message))
+    .then((message2) => console.log(message2))
 
 
-// внутрь Promise передаем колбэк-функцию, которая собственно и есть та логика, которую промис обещает выполнить.
-// let myPromise = new Promise((resolve, reject) => {
-// resolve(Math.random())
-//
-// });
+    .then(() => {console.log(2)})
+    .catch(data => console.error(data))
+    .finally(() => {console.log("Thank")})*/
 
-// ниже по коду мы можем подписаться, на промис, чтобы он (промис) вызвал нашу функцию, когда он (промис) зарезолвится.Для этого передаём в метод then колбэк-функцию)
 
-//промиссификация аллерта
-/* let promis = new Promise((res, rej) => {
-alert("Mrrrrrrrrr")
-res()
-})
-promis.then()*/
+    //ченинг
+    // let a = {
+    // sum(a, b) {
+    // console.log(a+b);
+    // return this
+    // }
+    // }
+    //
+    // a.sum(2, 3)
+    // a.sum(7, 3)
+    // a.sum(2, 4)
 
-/*const doAfter = (sec) => {
-let myPromise = new Promise((resolve, reject) => {
-setTimeout (() => {
-resolve()
-}, sec*1000)
-});
-return myPromise
-}
 
-doAfter(5).then(() => console.log('я сработал через 5 секунд'));
-doAfter(3).then(() => console.log('а я сработал через 3 секунд'));
-doAfter(10).then(() => console.log('я сработал через 10 секунд'));
-*/
-// myPromise.then((number) => {
-// console.log(number);
-// console.log(myPromise);
-// })
-// myPromise.then((number) => {
-// console.log("myr: " + number);
-// console.log(myPromise);
-// })
+    // внутрь Promise передаем колбэк-функцию, которая собственно и есть та логика, которую промис обещает выполнить.
+    // let myPromise = new Promise((resolve, reject) => {
+    // resolve(Math.random())
+    //
+    // });
+
+    // ниже по коду мы можем подписаться, на промис, чтобы он (промис) вызвал нашу функцию, когда он (промис) зарезолвится.Для этого передаём в метод then колбэк-функцию)
+
+    //промиссификация аллерта
+    /* let promis = new Promise((res, rej) => {
+    alert("Mrrrrrrrrr")
+    res()
+    })
+    promis.then()*/
+
+    /*const doAfter = (sec) => {
+    let myPromise = new Promise((resolve, reject) => {
+    setTimeout (() => {
+    resolve()
+    }, sec*1000)
+    });
+    return myPromise
+    }
+
+    doAfter(5).then(() => console.log('я сработал через 5 секунд'));
+    doAfter(3).then(() => console.log('а я сработал через 3 секунд'));
+    doAfter(10).then(() => console.log('я сработал через 10 секунд'));
+    */
+    // myPromise.then((number) => {
+    // console.log(number);
+    // console.log(myPromise);
+    // })
+    // myPromise.then((number) => {
+    // console.log("myr: " + number);
+    // console.log(myPromise);
+    // })
 
 </script>
 
