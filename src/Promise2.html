@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise</title>
+</head>
+<body>
+
+
+<script>
+
+    const doAfter = (sec) => {
+        let myPromise = new Promise((resolve, reject) => {
+            setTimeout (() => {
+                resolve()
+            }, sec*1000)
+        });
+        return myPromise
+    }
+
+    let promise3 = doAfter(3);
+    promise3.then( () => console.log('я сработал через 3 секунд') );
+    promise3.then( () => console.log('и я тоже следом сработал через 3 секунд') );
+    promise3.then( () => console.log('и я') );
+
+</script>
+
+
+</body>
+</html>
