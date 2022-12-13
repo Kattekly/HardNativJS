@@ -59,36 +59,31 @@
     ///////////////////////////////////
 
     async function Vacansies() {
-        await api.getVacanciesCountFromMicrosoft().then(res => {
-            console.log(res.data.vacansies);
-        });
-        await api.getVacanciesCountFromGoogle().then(res => {
-            console.log(res.data.vacansies);
-        });
-        await api.sendStudentsCountToItKamasutra().then(res => {
-            console.log(res.data);
-        })
+        let msCount = await api.getVacanciesCountFromMicrosoft()
+        let gCount = await api.getVacanciesCountFromGoogle()
+        let allCount = await api.sendStudentsCountToItKamasutra(msCount + gCount)
+    }
 
-        //////////////////////////////////
+    //////////////////////////////////
 
-        const api = {
-            sendStudentsCountToItKamasutra(students) {
-                return axios.post('')
-                {
-                    count: studentsCount
-                }
-            },
-            getVacanciesCountFromGoogle() {
-                return axios.get('').then((res) => {
-                    res.data.vacancies
-                })
-            },
-            getVacanciesCountFromMicrosoft() {
-                return axios.get('').then((res) => {
-                    res.data.vacancies
-                })
+    const api = {
+        sendStudentsCountToItKamasutra(students) {
+            return axios.post('')
+            {
+                count: studentsCount
             }
+        },
+        getVacanciesCountFromGoogle() {
+            return axios.get('').then((res) => {
+                res.data.vacancies
+            })
+        },
+        getVacanciesCountFromMicrosoft() {
+            return axios.get('').then((res) => {
+                res.data.vacancies
+            })
         }
+    }
 
 
     /* let axios = {
