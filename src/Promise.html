@@ -28,30 +28,37 @@
 
     let res = Promise.all([pr1, pr2])
 
-    res.then((res) => {
-        let p1 = res[0].data.vacansies;
-        let p2 = res[1].data.vacansies;
+    res
+        .then((res) => {
+            let p1 = res[0].data.vacansies;
+            let p2 = res[1].data.vacansies;
+            return api.sendStudentsCountToItKamasutra(p1 + p2)
+        })
+        .then(res => {
+            console.log(res.data);
 
-        api.sendStudentsCountToItKamasutra(p1 + p2)
-            .then(res => {
-                console.log(res.data);
-            });
-    }).catch(() => {
+        }).catch(() => {
         alert("sorry, are you stupid")
     })
 
-//////////////////////////////////
+    //////////////////////////////////
 
     const api = {
         sendStudentsCountToItKamasutra(students) {
             return axios.post('')
-            {count: studentsCount}
+            {
+                count: studentsCount
+            }
         },
         getVacanciesCountFromGoogle() {
-            return axios.get('').then((res) => {res.data.vacancies})
+            return axios.get('').then((res) => {
+                res.data.vacancies
+            })
         },
         getVacanciesCountFromMicrosoft() {
-            return axios.get('').then((res) => {res.data.vacancies})
+            return axios.get('').then((res) => {
+                res.data.vacancies
+            })
         }
     }
 
