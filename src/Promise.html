@@ -32,13 +32,28 @@
         let p1 = res[0].data.vacansies;
         let p2 = res[1].data.vacansies;
 
-        api.sendStudentsCountToItKamasutra(p1+p2)
+        api.sendStudentsCountToItKamasutra(p1 + p2)
             .then(res => {
                 console.log(res.data);
             });
     }).catch(() => {
         alert("sorry, are you stupid")
     })
+
+//////////////////////////////////
+
+    const api = {
+        sendStudentsCountToItKamasutra(students) {
+            return axios.post('')
+            {count: studentsCount}
+        },
+        getVacanciesCountFromGoogle() {
+
+        },
+        getVacanciesCountFromMicrosoft() {
+
+        }
+    }
 
 
     /* let axios = {
