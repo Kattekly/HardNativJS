@@ -13,3 +13,10 @@ p.then(() => {
 }).catch(() => {
     //
 })
+
+//замыкание
+const a = 12
+
+function b() {
+    console.log(a)
+}
