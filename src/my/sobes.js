@@ -37,7 +37,7 @@ function fnB() {
 fnA();
 fnB();
 
-//пример исп. метода функции
+//пример исп. метода функции (call)
 const obj = {
     name: 'Kate',
     getName: function () {
@@ -50,3 +50,14 @@ const obj2 = {
 }
 
 console.log(obj.getName.call(obj2))
+
+//как this работает в конструкторах
+
+function Car (model) {
+    this.model = model
+}
+
+const BMW = new Car() // пока не вызвали через нью это не конструктор, не экземпляр
+// если без нью, то this будет undefined, в нестрогом режиме он превращается в ссылку на глобал. объект
+
+//цепочка прототипов
