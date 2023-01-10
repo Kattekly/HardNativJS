@@ -22,7 +22,7 @@ function b() {
 }
 
 //this в глобальном скоупе - глобальный объект
-console.log(this === window)
+console.log(this === window) // вернет true
 
 //дополнительные примеры
 function fnA() {
