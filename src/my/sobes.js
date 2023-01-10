@@ -28,9 +28,25 @@ console.log(this === window)
 function fnA() {
     console.log(this); // window (не строгий режим)
 }
+
 function fnB() {
     'use strict';
     console.log(this); // undefined (строгий режим)
 }
+
 fnA();
 fnB();
+
+//пример исп. метода функции
+const obj = {
+    name: 'Kate',
+    getName: function () {
+        return this.name
+    }
+}
+
+const obj2 = {
+    name: 'Kate'
+}
+
+console.log(obj.getName.call(obj2))
