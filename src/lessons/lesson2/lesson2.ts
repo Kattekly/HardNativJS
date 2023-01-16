@@ -23,6 +23,17 @@ console.log('lesson 2');
 // https://www.youtube.com/watch?v=Kuq6oIN3PH0
 
 
+//пример замыкани
+const a = 10
+
+function b() {
+    console.log(a)
+}
+
+b()
+
+
+
 // Task 01
 // Реализовать функцию sum которая суммирует 2 числа следующим образом sum(3)(6) === 9
 
