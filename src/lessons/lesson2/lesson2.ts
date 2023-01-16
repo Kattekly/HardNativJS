@@ -24,10 +24,10 @@ console.log('lesson 2');
 
 
 //пример замыкани
-const a = 10
+const c = 10
 
 function b() {
-    console.log(a)
+    console.log(c)
 }
 
 b()
