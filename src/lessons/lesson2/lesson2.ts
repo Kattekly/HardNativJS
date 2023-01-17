@@ -56,7 +56,8 @@ console.log(dec(1))
 console.log(dec(9))
 
 
-//3
+//3 Напишите функцию sum, которая работает таким образом: sum(a)(b) = a+b.
+// Чтобы вторые скобки заработали, первые – должны вернуть функцию.
 function sum(a) {
 return function sum2 (b) {
     return a+b
@@ -75,6 +76,19 @@ sum(2)(4)
 // const counter2 = makeCounter();
 // counter2(); // 1
 // counter(); // 3
+
+function makeCounter() {
+    let count = 1
+    return function() {
+        return count++
+    }
+}
+const counter = makeCounter()
+console.log(counter())
+console.log(counter())
+const counter2 = makeCounter()
+console.log(counter2())
+console.log(counter())
 
 // Task 03
 // Переписать функцию из Task 02 так, что бы она принимала число в качестве аргумента и это число было стартовым значением счетчика
