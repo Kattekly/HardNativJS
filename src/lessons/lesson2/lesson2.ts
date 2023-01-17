@@ -113,6 +113,10 @@ console.log(counter())
 
 // P.S. типизируйте только аргументы, а при вызове функции используйте @ts-ignore
 
+function superSum(n) {
+
+}
+
 // Task 05
 // решить все задачи по рекурсии которые даны в конце статьи https://learn.javascript.ru/recursion
 
