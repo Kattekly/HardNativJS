@@ -34,20 +34,21 @@ b()
 
 //1 Создайте замыкание: функция makePassword получает пароль в аргументе и возвращает внутреннюю функцию, которая принимает введенную строку и возвращает булево значение true, если введенная строка совпадает с паролем и faulse – если не слвпадает.
 function makePassword(password) {
-    return function proverka (tryPassword){
+    return function proverka(tryPassword) {
         return (tryPassword === password);
-};
+    };
 }
+
 let my = makePassword("ni12")
-console.log('password'+ ' ' + my('ni12'))
-console.log('password'+ ' ' + my('78g'))
+console.log('password' + ' ' + my('ni12'))
+console.log('password' + ' ' + my('78g'))
 
 
 //2 Создайте замыкание: функция addition получает число n и возвращает внутреннюю функцию. Эта функция также получает число, прибавляет его к n и возвращает результат.
 
 function addition(n) {
-    return function sum (m) {
-        return n+m
+    return function sum(m) {
+        return n + m
     };
 }
 
@@ -59,10 +60,11 @@ console.log(dec(9))
 //3 Напишите функцию sum, которая работает таким образом: sum(a)(b) = a+b.
 // Чтобы вторые скобки заработали, первые – должны вернуть функцию.
 function sum(a) {
-return function sum2 (b) {
-    return a+b
+    return function sum2(b) {
+        return a + b
+    }
 }
-}
+
 sum(2)(4)
 // Task 01
 // Реализовать функцию sum которая суммирует 2 числа следующим образом sum(3)(6) === 9
@@ -79,10 +81,11 @@ sum(2)(4)
 
 function makeCounter() {
     let count = 1
-    return function() {
+    return function () {
         return count++
     }
 }
+
 const counter = makeCounter()
 console.log(counter())
 console.log(counter())
@@ -115,9 +118,9 @@ console.log(counter())
 
 //Задача 1
 function sumTo(n: number) {
-let sum = 0
-    for(let i = 0; i<= n; i++) {
-        sum +=i
+    let sum = 0
+    for (let i = 0; i <= n; i++) {
+        sum += i
     }
     return sum
 }
@@ -125,17 +128,16 @@ let sum = 0
 function sumTo2(n: number): number {
     if (n == 1) {
         return n
-    }
-    else {
-        return n + sumTo2(n-1)
+    } else {
+        return n + sumTo2(n - 1)
     }
 }
 
 console.log(sumTo2(100))
 
 
-function sumTo3(n: number){
- return n * (n + 1)/2
+function sumTo3(n: number) {
+    return n * (n + 1) / 2
 }
 
 console.log(sumTo3(100))
@@ -145,9 +147,8 @@ console.log(sumTo3(100))
 function factorial(n: number): number {
     if (n == 1) {
         return n
-    }
-    else {
-        return n * factorial(n-1)
+    } else {
+        return n * factorial(n - 1)
     }
 }
 
@@ -156,10 +157,10 @@ console.log(factorial(5))
 
 //Задача 3
 function fib(n: number): number {
-    if (n <=1) {
+    if (n <= 1) {
         return n
     }
-    return fib(n-1) + fib(n-2)
+    return fib(n - 1) + fib(n - 2)
 }
 
 console.log(fib(7))
@@ -192,11 +193,12 @@ let list = {
         }
     }
 }
+
 function printList(list: any) {
-   let a = list
+    let a = list
     while (a) {
         alert(a.value)
-       a = a.next
+        a = a.next
     }
 }
 
@@ -208,8 +210,9 @@ printList(list)
 function printList2(list: any): any {
     alert(list.value)
     if (list.next)
-   return printList2(list.next)
+        return printList2(list.next)
 }
+
 printList2(list)
 
 
@@ -221,9 +224,10 @@ function printList3(list: any) {
         b.push(a.value)
         a = a.next
     }
-    for (let i = b.length-1; i>=0; i--)
+    for (let i = b.length - 1; i >= 0; i--)
         alert(b[i])
 }
+
 printList3(list)
 
 
@@ -240,15 +244,15 @@ printList4(list)
 
 function flatAll(array: any): any {
     return array.reduce((acc: any, current: any) => {
-        if(Array.isArray(current)) return acc.concat(flatAll(current))
+        if (Array.isArray(current)) return acc.concat(flatAll(current))
         return [...acc, current]
     }, [])
 }
-let a = [1,2,3,[4,5,[6,7]]]
+
+let a = [1, 2, 3, [4, 5, [6, 7]]]
 console.log(flatAll(a))
 
 
-
-
 // just a plug
-export default () => {};
+export default () => {
+};
