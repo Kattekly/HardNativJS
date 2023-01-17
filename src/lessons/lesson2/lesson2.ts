@@ -41,6 +41,20 @@ function makePassword(password) {
 let my = makePassword("ni12")
 console.log('password'+ ' ' + my('ni12'))
 console.log('password'+ ' ' + my('78g'))
+
+
+//2 Создайте замыкание: функция addition получает число n и возвращает внутреннюю функцию. Эта функция также получает число, прибавляет его к n и возвращает результат.
+
+function addition(n) {
+    return function sum (m) {
+        return n+m
+    };
+}
+
+let dec = addition(2)
+console.log(dec(1))
+console.log(dec(9))
+
 // Task 01
 // Реализовать функцию sum которая суммирует 2 числа следующим образом sum(3)(6) === 9
 
