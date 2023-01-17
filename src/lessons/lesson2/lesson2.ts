@@ -32,8 +32,15 @@ function b() {
 
 b()
 
-
-
+//1
+function makePassword(password) {
+    return function proverka (tryPassword){
+        return (tryPassword === password);
+};
+}
+let my = makePassword("ni12")
+console.log('password'+ ' ' + my('ni12'))
+console.log('password'+ ' ' + my('78g'))
 // Task 01
 // Реализовать функцию sum которая суммирует 2 числа следующим образом sum(3)(6) === 9
 
