@@ -55,6 +55,14 @@ let dec = addition(2)
 console.log(dec(1))
 console.log(dec(9))
 
+
+//3
+function sum(a) {
+return function sum2 (b) {
+    return a+b
+}
+}
+sum(2)(4)
 // Task 01
 // Реализовать функцию sum которая суммирует 2 числа следующим образом sum(3)(6) === 9
 
