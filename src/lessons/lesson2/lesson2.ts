@@ -66,6 +66,18 @@ function sum(a) {
 }
 
 sum(2)(4)
+
+
+function umn(a) {
+    return function umn2(b) {
+        return function umn3(c) {
+            return a+b+c
+        }
+    }
+}
+
+umn(1)(2)(3)
+
 // Task 01
 // Реализовать функцию sum которая суммирует 2 числа следующим образом sum(3)(6) === 9
 
