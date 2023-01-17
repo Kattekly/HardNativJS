@@ -71,13 +71,35 @@ sum(2)(4)
 function umn(a) {
     return function umn2(b) {
         return function umn3(c) {
-            return a+b+c
+            return a + b + c
         }
     }
 }
 
 umn(1)(2)(3)
 
+function multiply(a) {
+    return (b) => {
+        return (c) => {
+            return a * b * c
+        }
+    }
+}
+
+(multiply(1)(2)(3))
+
+//Универсальная функция для каррирования
+function newg(a, b, c) {
+    return a + b + c
+}
+
+function curry(fn, ...args) {
+    return (..._arg) => {
+        return fn(...args, ..._arg);
+    }
+}
+
+curry(newg(1, 2, 3))
 // Task 01
 // Реализовать функцию sum которая суммирует 2 числа следующим образом sum(3)(6) === 9
 
@@ -126,7 +148,7 @@ console.log(counter())
 // P.S. типизируйте только аргументы, а при вызове функции используйте @ts-ignore
 
 function superSum(n) {
-
+    return
 }
 
 // Task 05
