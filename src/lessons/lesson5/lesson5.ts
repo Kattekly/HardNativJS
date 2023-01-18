@@ -34,17 +34,17 @@ type someObjType = {
 
 let someObj = {
     name: 'Eugene',
-    age: 32
+    age: 32,
+
+    Greeting: Greeting {
+     return {
+         console.log(`My name is ${this.name}. I am ${this.age}`)
+     }
+    }
 }
 
-const Greeting = {
-    greeting() {
-        return console.log(`My name is ${this.name}. I am ${this.age}`)
-}
-}
 
-someObj.__proto__= Greeting
-someObj.greeting()
+
 
 
 // Task 02
