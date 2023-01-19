@@ -79,4 +79,4 @@ function User(name) {
     this.name = name
 }
 
-const kater = new User('Kate')
+const kattekly = new User('Kate')
