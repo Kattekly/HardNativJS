@@ -91,7 +91,7 @@ const Base = {
 }
 
 const Super = {
-    getName () {
+    getName() {
         //.........
     },
     __proto__: Base
