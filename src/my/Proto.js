@@ -125,3 +125,15 @@ let pockets = {
 
 console.log(pockets.pen)
 console.log(bed.glasses)
+
+//==============================
+//добавить метод для всего класса функций
+Function.prototype.defer = function (ms) {
+    setTimeout(this, ms)
+}
+
+function f() {
+    alert("Hello!");
+}
+
+f.defer(1000);
