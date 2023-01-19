@@ -32,7 +32,7 @@ const User2 = {
         }
     }
 }
-// const kate = new User2("Kate")
+//const kate = new User2("Kate")
 // const peter = new User2("Peter")
 
 
@@ -45,6 +45,30 @@ const peter = {
     name: 'Peter'
     // [[Prototype]] : User2.prototype
 }
+
+//============================
+
+function User3(name) {
+    this.name = name
+    this.showName = function () {
+        console.log(this.name)
+    }
+}
+
+
+// User3.prototype.showName = function () {
+//         console.log(this.name)}
+// методы можно добавлять так
+
+
+User3.prototype.showName = function () {
+    console.log(this.name)
+}
+
+const kate2 = new User3("Kate")
+const peter2 = new User3("Peter")
+
+kate2.showName() //Kate
 
 //============================
 function User(name) {
