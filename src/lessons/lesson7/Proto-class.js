@@ -1,6 +1,6 @@
 class Animal {
     constructor(name) {
-        this.name = name
+        this.name = name || "Animal"
     }
 
     walk() {
@@ -20,6 +20,8 @@ let dog = new Animal("dog")
 dog.walk()
 dog.eat()
 dog.sleep()
+let a = new Animal()
+a.eat()
 
 class Monkey extends Animal {
 
