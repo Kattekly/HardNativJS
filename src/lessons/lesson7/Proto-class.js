@@ -1,17 +1,22 @@
 class Animal {
     constructor(name) {
-        this.name = name
+        this.name = name || "Animal"
     }
 
     walk() {
-        `${this.name} walking`
+        console.log(`${this.name} walking`)
     }
 
     eat() {
-        `${this.name} eating`
+        console.log(`${this.name} eating`)
     }
 
     sleep() {
-        `${this.name} sleeping`
+        console.log(`${this.name} sleeping`)
     }
 }
+
+let dog = new Animal("dog")
+dog.walk()
+dog.eat()
+dog.sleep()
