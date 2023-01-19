@@ -68,9 +68,11 @@ User3.prototype.showAge = function () {
 
 const kate2 = new User3("Kate")
 const peter2 = new User3("Peter", 12)
+const anna = new kate2.constructor("Anna") //kate2.__proto__ ---> {constructor: User3} <--- User3.prototype
 
 kate2.showName() //Kate
 peter2.showAge()
+anna.showName()
 
 //============================
 function User(name) {
