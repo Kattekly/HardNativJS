@@ -51,7 +51,7 @@ const peter = {
 function User3(name, age) {
     this.name = name
     this.age = age
-    this.showName = function () {
+    this.showName = function () { //метод сразу попад. в 2 ф-ции и происх. дублирование
         console.log(this.name)
     }
 }
@@ -59,7 +59,7 @@ function User3(name, age) {
 
 // User3.prototype.showName = function () {
 //         console.log(this.name)}
-// методы можно добавлять так
+// методы можно добавлять так, это позволяет избежать дублирования
 
 
 User3.prototype.showAge = function () {
