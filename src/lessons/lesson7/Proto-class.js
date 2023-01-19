@@ -1,6 +1,6 @@
 class Animal {
     constructor(name) {
-        this.name = name || "Animal"
+        this.name = name
     }
 
     walk() {
@@ -20,3 +20,19 @@ let dog = new Animal("dog")
 dog.walk()
 dog.eat()
 dog.sleep()
+
+class Monkey extends Animal {
+
+    roar() {
+        console.log(`${this.name} roaring`)
+    }
+
+    climb() {
+        console.log(`${this.name} climbing`)
+    }
+}
+
+let monkey = new Monkey("Monkey")
+monkey.climb()
+monkey.roar()
+monkey.eat()
