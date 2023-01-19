@@ -36,3 +36,17 @@ let monkey = new Monkey("Monkey")
 monkey.climb()
 monkey.roar()
 monkey.eat()
+
+class Human extends Monkey {
+    speak() {
+        console.log(`${this.name} speaking`)
+    }
+
+    think() {
+        console.log(`${this.name} thinking`)
+    }
+}
+
+let human = new Human("Human")
+human.speak()
+human.think()
