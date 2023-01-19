@@ -48,8 +48,9 @@ const peter = {
 
 //============================
 
-function User3(name) {
+function User3(name, age) {
     this.name = name
+    this.age = age
     this.showName = function () {
         console.log(this.name)
     }
@@ -61,14 +62,15 @@ function User3(name) {
 // методы можно добавлять так
 
 
-User3.prototype.showName = function () {
-    console.log(this.name)
+User3.prototype.showAge = function () {
+    console.log(this.age)
 }
 
 const kate2 = new User3("Kate")
-const peter2 = new User3("Peter")
+const peter2 = new User3("Peter", 12)
 
 kate2.showName() //Kate
+peter2.showAge()
 
 //============================
 function User(name) {
