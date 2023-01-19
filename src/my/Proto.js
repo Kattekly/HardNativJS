@@ -80,3 +80,24 @@ function User(name) {
 }
 
 const kattekly = new User('Kate')
+
+//============================
+// Цепочка прототипов
+
+const Base = {
+    show() {
+        console.log(this.name)
+    }
+}
+
+const Super = {
+    getName () {
+        //.........
+    },
+    __proto__: Base
+}
+
+const Kate = {
+    name: "Kate",
+    __proto__: Super
+}
