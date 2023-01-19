@@ -23,10 +23,32 @@ alex.__proto__ = user
 alex.showName()
 hanna.showName()
 
+//============================
+const User2 = {
+    prototype: {
+        constructor: User2,
+        showName() {
+            console.log(this.name)
+        }
+    }
+}
+// const kate = new User2("Kate")
+// const peter = new User2("Peter")
+
+
+const kate = {
+    name: 'Kate'
+    // [[Prototype]] : User2.prototype
+}
+
+const peter = {
+    name: 'Peter'
+    // [[Prototype]] : User2.prototype
+}
 
 //============================
 function User(name) {
     this.name = name
 }
 
-const kate = new User('Kate')
+const kater = new User('Kate')
