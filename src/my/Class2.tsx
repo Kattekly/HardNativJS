@@ -20,7 +20,7 @@ class User {
 }
 
 let kate = new User('Kate', 26)
-kate.name
+console.log(kate.name)
 
 export default User;
 
