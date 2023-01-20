@@ -12,8 +12,8 @@ class Car {
 }
 
 class Ford extends Car {
-    constructor(model) {
-        super(model)
+    constructor(model) { //не создает совй this
+        super(model) //вызов родительского констурктора, чтобы не дублирваоть логику
     }
     fordRun() {
         console.log('Ford')
