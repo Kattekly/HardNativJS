@@ -1,6 +1,9 @@
 class Animal {
+
+    static defaultName = "Animal"
+
     constructor(name) {
-        this.name = name || "Animal"
+        this.name = name || Animal.defaultName
     }
 
     walk() {
