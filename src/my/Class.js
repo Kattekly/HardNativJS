@@ -1,4 +1,7 @@
 class Car {
+
+    static COUNT = 6
+
     constructor(model) {
         this.model = model
     }
@@ -16,6 +19,7 @@ class Ford extends Car {
 
 const mondeo = new Ford('Mondeo')
 mondeo.run()
+console.log(Ford.COUNT)
 
 //=====================================
 
