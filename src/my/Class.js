@@ -12,6 +12,9 @@ class Car {
 }
 
 class Ford extends Car {
+    constructor(model) {
+        super(model)
+    }
     fordRun() {
         console.log('Ford')
     }
