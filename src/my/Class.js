@@ -1,19 +1,23 @@
-/*
 class Car {
+    constructor(model) {
+        this.model = model
+    }
+
     run() {
         console.log(this.model + ' ' + "running")
     }
 }
 
-class Ford extends Car{
-    constructor(model) {
-        super();
+class Ford extends Car {
+    fordRun() {
+        console.log('Ford')
     }
 }
 
 const mondeo = new Ford('Mondeo')
-mondeo.run()*/
+mondeo.run()
 
+//=====================================
 
 function Car() {
 }
