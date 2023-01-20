@@ -1,10 +1,11 @@
 import React from 'react';
 
 class User {
-    name: string
-    age: number
+    // name: string
+    // age: number
+    //модификаторы в констуркторе позволяют избавиться от этой типизации
 
-    constructor(name: string, age: number) {
+    constructor(public name: string, public age: number) {
         this.name = name
         this.age = age
     }
@@ -17,6 +18,9 @@ class User {
         return this.age
     }
 }
+
+let kate = new User('Kate', 26)
+kate.name
 
 export default User;
 
