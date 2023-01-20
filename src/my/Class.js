@@ -33,6 +33,8 @@ Ford.prototype.fordRun = function () {
 
 const mondeo = new Ford('Mondeo')
 
+Ford.prototype.__proto__ = Car.prototype
+
 mondeo.fordRun()
 mondeo.run()
 
