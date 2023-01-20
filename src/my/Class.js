@@ -15,18 +15,27 @@ const mondeo = new Ford('Mondeo')
 mondeo.run()*/
 
 
-function Car() {}
+function Car() {
+}
 
-    Car.prototype.run = function () {
-        console.log(this.model + ' ' + "running")
-    }
+Car.prototype.run = function () {
+    console.log(this.model + ' ' + "running")
+}
 
 
 function Ford(model) {
     this.model = model
 }
 
+Ford.prototype.fordRun = function () {
+    console.log('Ford run')
+}
+
 const mondeo = new Ford('Mondeo')
 
+mondeo.fordRun()
+mondeo.run()
 
-Car.prototype.run.call(mondeo)
+
+/*
+Car.prototype.run.call(mondeo)*/
