@@ -79,7 +79,7 @@ function User(name) {
     this.name = name
 }
 
-const kattekly = new User('Kate')
+const katte = new User('Kate')
 
 //============================
 // Цепочка прототипов
